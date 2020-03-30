@@ -4,4 +4,8 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
 /*
 font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
 */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 /*# sourceMappingURL=style.css.map */
