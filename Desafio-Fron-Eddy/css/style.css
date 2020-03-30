@@ -1,0 +1,150 @@
+/* Navbar font
+font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+*/
+/*
+font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+*/
+@media only screen and (max-device-width: 767px) {
+  .brand-lg {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 1439px) {
+  /* For desktop: */
+}
+
+@media only screen and (min-device-width: 768px) {
+  /* For desktop: */
+  .mainBarLeft {
+    margin-left: 150px;
+  }
+  .mainBarRight {
+    margin-right: 150px;
+  }
+  .brand-xs {
+    display: none;
+  }
+}
+
+.main-bar {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 65px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: middle;
+}
+
+.mainBarLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.mainBarRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainBarRight .svgIcon-use {
+  cursor: pointer;
+  fill: gray;
+  margin-right: 15px;
+}
+
+.mainBarRight .svgIcon-use :hover {
+  fill: black;
+}
+
+.mainBarRight .btn {
+  margin-right: 15px;
+}
+
+.btn {
+  color: black;
+  background-color: white;
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  padding: 0px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.user-avatar .avatar-image {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.mainNav_Wrapper {
+  margin-top: 15px;
+  margin-left: 135px;
+  margin-right: 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  overflow: hidden;
+  max-width: 1050px;
+}
+
+.mainNav_Wrapper a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  text-decoration: none;
+  -webkit-text-decoration-style: none;
+          text-decoration-style: none;
+  color: darkgray;
+  margin: 10px;
+}
+
+.mainNav_Wrapper a a:hover {
+  color: grey;
+  fill: black;
+}
+
+.mainNav_Wrapper .main-Nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainNav_Wrapper .main-Nav .mainNav-Advancer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  fill: darkgray;
+  border: none;
+}
+
+.mainNav_Wrapper .main-Nav .mainNav-Advancer :hover {
+  fill: black;
+}
+/*# sourceMappingURL=style.css.map */
