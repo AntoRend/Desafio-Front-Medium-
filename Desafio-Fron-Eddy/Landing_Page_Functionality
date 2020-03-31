@@ -1,0 +1,100 @@
+    CSS:
+    
+    metabarLogoLeft (Medium (u-xs-hide u-flex) / M )
+        {
+        //En breakpoint >=768px se muestra el logotipo con la palabra Medium, en bp<768 (-xs-hide) se oculta el logotipo Medium, y ahora se muestra el logo M
+        //Al picar sobre el logo: lleva a https://www.medium.com
+        cursor: pointer
+            
+            // se aplica las siguientes clases para hacer que metabar se oculte cuando comencemos a hacer escrollDown.
+            #metabar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+            }
+
+            #metabar a {
+            float: left;
+            display: block;
+            }
+
+
+                
+        }
+        
+    metabar-block ( buttonSet -- wide )  {
+        elementos {
+            .icon:hover {
+                fill: #CCCCCC;
+                
+            }
+            
+            #metabar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+            }
+
+            #metabar a {
+            float: left;
+            display: block;
+            }
+        
+        //En breakpoint >=768px se muestra todos los iconos: lupa, bookmark, notifications, upgrade, avatar, en bp<768 (-xs-hide) se ocultan bookmark y upgrade.
+        //lupa en breakpoint >=768: al picar sobre la lupa se despliega una pequeña barra de input para capturar el texto de busqueda. al comenzar a capturar
+        //datos por teclado, se muestra una ventana modal con resultados sugeridos y recomendaciones tomando en cuenta el texto ingresado desde el primer caractér
+        //lupa en breakpoint <768px: al picar sobre la lupa se ocultan todos los elementos de la landing, y solo se muestran lo siguientes elementos:
+        //metabarLogoLeft logo pequeño (M) esquina superior izquierda. metabar - esquina superior derecha se muestra iconos de notifications y avatar.
+        //se muestra justo debajo del metabar, un searchBox sin bordes, solo con una línea en bottom, cuando picamos sobre esta searchBox y comenzamos a capturar
+        //a través del teclado, se comienzan a mostrar resultados apilados verticalmente.
+        cursor: pointer
+        
+        }
+        
+    HTML:
+    Metabar (metabarLogoLeft)
+    
+    Muestra logo pequeño (M)
+    <div class="u-xs-show js-metabarLogoLeft">
+    
+    Muestra logo grande (Medium)
+    <div class="u-xs-hide js-metabarLogoLeft">
+    
+    Barra de Header (metabar - esquina superior derecha)
+    
+    <div class="metabar-block u-flex0">
+    
+    
+    
+    
+    Navbar 
+    
+    contine botones < > en los extremos de la navbar que realizan la función de scroll para mostrar los elementos de la lista que quedan ocultos debido al max-width de la Navbar
+    
+    CSS: 
+        h3 {
+        font-color: grey
+        }
+        
+        
+        h3:hover {
+        font-color: black (tambien podemos aplicar el método fill: #CCCCCC
+        cursor: pointer
+        }
+        
+    <nav role="navigation" class="metabar-block metabar-block--below u-flexCenter u-overflowHidden u-height50 u-xs-height39">
+    
+    
+    HTML:
+        Esta navbar queda fija (fixed) cuando se comienza a hacer scrollDown con positio:top y margin-top:0
+        <div class="u-noWrap navBar-scrollFix uiScale uiScale-ui--regular uiScale-caption--regular">
+        
+        
+        
+        
+    
+    
