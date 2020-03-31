@@ -13,6 +13,19 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
   height: 15vw;
 }
 
+.modal-content .modal-container .profile-box .social-networks .network-logo button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.modal-content .modal-container .profile-box .social-networks .network-logo:hover {
+  cursor: pointer;
+}
+
+.modal-content .modal-container .profile-box .profile .img-profile:hover {
+  cursor: pointer;
+}
+
 .modal-content .modal-container .profile-box .profile .name-profile div a {
   color: black;
 }
@@ -23,5 +36,25 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
 
 .modal-content .modal-container .image {
   overflow: hidden;
+}
+
+.popover .popover-body ul {
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
+.popover .popover-body ul li {
+  list-style: none;
+  padding-bottom: 2px;
+}
+
+.popover .popover-body ul li span button {
+  background-color: transparent;
+  border: transparent;
+  font-weight: lighter;
+}
+
+.popover .popover-body ul li span button:hover {
+  font-weight: normal;
 }
 /*# sourceMappingURL=style.css.map */

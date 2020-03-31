@@ -14,12 +14,47 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
 }
 .modal-content{
     .modal-container{
-        .profile-box .profile .name-profile div{
-            a{color: black; }
-            button{font-size: 1vw;}
+        .profile-box{
+            .social-networks .network-logo button{
+                background-color: transparent;
+                border: transparent;
+            }
+            .social-networks .network-logo:hover{
+                cursor: pointer;
+            }
+            .profile{
+                .img-profile:hover{cursor: pointer;}
+                .name-profile div{
+                    a{color: black; }
+                    button{font-size: 1vw;}
+                }
+            } 
         }
         .image{
             overflow: hidden;
         }
     }
-}
+ } 
+
+ .popover{
+     .popover-body{
+         ul{
+            padding-inline-start: 0px;
+            li{
+                list-style: none;
+                padding-bottom: 2px;
+                span{
+                    button{
+                        background-color: transparent;
+                        border: transparent;
+                        font-weight: lighter;
+                    }
+                    button:hover{
+                        font-weight: normal;
+                    }
+                } 
+            }
+         } 
+     }
+ }
+ 

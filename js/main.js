@@ -124,7 +124,9 @@ const showModalContent =()=>{
                             <img src="./assets/images/label-icon.png" alt="">
                         </div>
                         <div class="network-logo mx-1">
-                            <img src="./assets/images/three-dots-icon.png" alt="">
+                            <button data-target="popover" id="doot-menu">
+                                <img src="./assets/images/three-dots-icon.png" alt="">
+                            </button>
                         </div>        
                     </div>
                     <div class="profile d-flex mb-sm-3">
@@ -132,20 +134,22 @@ const showModalContent =()=>{
                         <div class="name-profile col-10">
                             <div class="d-flex justify-content-between">
                                 <a href="">User Name</a>
-                                <button type="button" class="btn btn-outline-info px-1 py-0">Follow</button>
+                                <button type="button" class="btn btn-outline-info d-none d-sm-block px-1 py-0">Follow</button>
                             </div>
                             <span>Fecha</span>
                         </div>
                     </div>
                 </div>
                 <div class="image">
-                    <figure><img src=${article.imgPost} alt=""></figure>
+                    <figure><img class="img-fluid" src=${article.imgPost} alt=""></figure>
                 </div>
-                <p>${article.contentPost}</p>
+                <p class="text-justify">${article.contentPost}</p>
                 <div class="references">
+                    <h5>References</h5>
                     <p>${article.referencesPost}</p>
                 </div>
                 <div class="tags">
+                    <h5>Tags</h5>
                     <p>${article.tagsPost}</p>
                 </div>
             </div>                    
@@ -153,6 +157,45 @@ const showModalContent =()=>{
      </div>
 </div>
     `)
+    $("#doot-menu").on("click",dootsMenu)
 }
 
 $("#article-button").on("click", showModalContent)
+
+const dootsMenu =()=>{
+ // let menudoot = document.createElement("div")
+  alert("aloha")
+  $("container").append(`
+  <div class="popover"  role="tooltip">
+  <div class="arrow"></div>
+  <div class="popover-body">
+      <ul>
+          <li>
+              <span>
+                  <button>Mute this author</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Mute this publication</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Mute this story</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Block this author</button>
+              </span>
+          </li>
+      </ul>
+  </div>
+</div> 
+  `)
+}
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
