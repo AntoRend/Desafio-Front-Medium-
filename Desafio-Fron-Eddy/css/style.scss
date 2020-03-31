@@ -206,7 +206,7 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
     
 /*Downloaded from https://www.codeseek.co/mahish/arrow-buttons-for-responsive-horizontal-scroll-menu-RajmQw */
 body {
-    margin: 3em;
+    margin: 1em;
   }
   
   * {
@@ -226,38 +226,44 @@ body {
   }
   
   .menu {
+    //  display: inline-flex;
+      margin: 0 auto;
+     padding: 0 2em;
     height: 40px;
-  
-    box-sizing: border-box;
+    
+   // box-sizing: border-box;
     white-space: nowrap;
     overflow-x: hidden;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
   }
   .menu .item {
-    display: inline-block;
-    width: 100px;
-    height: 100%;
+    display: inline-flex;
+    
+    margin: 0 10px;
+
+    width: auto;
+    height: 40%;
    // outline: 1px dotted gray;
-    padding: 0.5em;
-    box-sizing: border-box;
-    margin: 0 auto;
+   // padding: 0.5em;
+   // box-sizing: border-box;
+    //margin: 0 auto;
     background-color: white;
   }
   
   .paddle {
-    padding:0 1em;
+   // padding:0 1em;
     height: 30px;
     background-color: white;
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2em;
+    width: 1em;
   }
   
   .left-paddle {
-    margin-right: 2em;
-    padding: 0 1em;
+    
+   
     left: 0;
     border: none;
     background-color: none;
@@ -273,11 +279,11 @@ body {
     display: none;
   }
   
-  .print {
-    margin: auto;
-    max-width: 500px;
-  }
-  .print span {
-    display: inline-block;
-    width: 100px;
-  }
+  //.print {
+  //  margin: auto;
+  //  max-width: 500px;
+  //}
+  //.print span {
+  //  display: inline-block;
+  //  width: 100px;
+  //}
