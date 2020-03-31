@@ -8,4 +8,20 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+#content-text {
+  height: 15vw;
+}
+
+.modal-content .modal-container .profile-box .profile .name-profile div a {
+  color: black;
+}
+
+.modal-content .modal-container .profile-box .profile .name-profile div button {
+  font-size: 1vw;
+}
+
+.modal-content .modal-container .image {
+  overflow: hidden;
+}
 /*# sourceMappingURL=style.css.map */
