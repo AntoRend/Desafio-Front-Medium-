@@ -1,6 +1,6 @@
 
 // duration of scroll animation
-var scrollDuration = 500;
+var scrollDuration = 300;
 // paddles
 var leftPaddle = document.getElementsByClassName('left-paddle');
 var rightPaddle = document.getElementsByClassName('right-paddle');
@@ -28,7 +28,7 @@ var getMenuSize = function() {
 };
 var menuSize = getMenuSize();
 // get how much of menu is invisible
-var menuInvisibleSize = menuSize ; //"- menuWrapperSize"
+var menuInvisibleSize =   menuWrapperSize
 
 // get how much have we scrolled to the left
 var getMenuPosition = function() {
@@ -39,22 +39,21 @@ var getMenuPosition = function() {
 $('.menu').on('scroll', function() {
 
 	// get how much of menu is invisible
-	menuInvisibleSize = menuSize; //"- menuWrapperSize"
+	menuInvisibleSize = menuWrapperSize - menuWrapperSize ;
 	// get how much have we scrolled so far
 	var menuPosition = getMenuPosition();
 
-	var menuEndOffset = menuInvisibleSize - paddleMargin;
+	var menuEndOffset = menuInvisibleSize;//- paddleMargin
 
 
 });
 
 // scroll to left
 $(rightPaddle).on('click', function() {
-	$('.menu').animate( { scrollLeft: menuInvisibleSize}, scrollDuration);
+	$('.menu').animate( { scrollLeft: menuWrapperSize}, scrollDuration); 
 });
 
 // scroll to right
 $(leftPaddle).on('click', function() {
-	$('.menu').animate( { scrollLeft: '0' }, scrollDuration);
+	$('.menu').animate( { scrollLeft: '0' }, scrollDuration); //'0'
 });
-Comments
