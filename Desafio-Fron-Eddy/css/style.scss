@@ -274,3 +274,108 @@ body {
     display: none;
   }
 
+
+//Monse Styles from here...
+
+  .container-principal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .container-principal .container-notice-left {
+    background-color: violet;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  
+  .container-principal .container-notice-center {
+    background-color: yellow;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  
+  .container-principal .container-notice-center article {
+    background-color: blue;
+  }
+  
+  .container-principal .container-notice-rigth {
+    background-color: pink;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  /*# sourceMappingURL=style.css.map */
+  
+  .container_general{
+      display: flex;
+      flex-wrap: wrap;
+      
+  }
+  #img_new_principal{
+      width: 100%;
+  }
+  .principal_news{
+      display: flex;
+      justify-content: center;
+      max-width: 1208px;
+      margin: auto;
+  }
+  .new_principal{
+      justify-content: start;
+  }
+  .new_articles{
+      justify-content: center;
+  }
+  .new_extrem_rigth{
+      justify-content: end;
+  }
+  .container_picks{
+      display: flex;
+  }
+  .picks{
+      border-bottom-style: solid;
+      border-color: rgba(0,0,0,0.15);
+      border-width: 0.5mm;
+      display: flex;
+      justify-content: center;
+      width: 1208px;
+      margin: auto;
+  }
+  .see_picks{
+      justify-content: end;
+  }
+  
+  .posts{
+      display: flex;
+      justify-content: center;
+      max-width: 1208px;
+      margin: auto;
+  }
+  .section_left{
+      justify-self: start;
+      margin-top: 1%;
+  }
+  .section_rigth{
+      justify-self: end;
+      padding-left: 20%;
+      margin-top: 2%;
+      
+  }
+  .popular{
+      border-bottom-style: solid;
+      border-color: rgba(0,0,0,0.15);
+      border-width: 0.5mm;
+  }
+  .div_number{
+      font-size: 30px;
+      color: rgba(0,0,0,0.15);
+  }
+  .ranking{
+      color: rgba(0,0,0,0.40);
+  }
+  .buttons_marker{
+    display: inline;
+  }
