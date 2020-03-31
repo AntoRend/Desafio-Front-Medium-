@@ -17,6 +17,19 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
     }
 }
 
+@media only screen and (min-device-width: 1210px) {
+
+.mainBarLeft{
+
+    margin-left: 150px;
+}
+
+.mainBarRight{
+
+    margin-right: 150px;
+}
+
+}
 
 @media only screen and (min-device-width: 1439px) {
     /* For desktop: */
@@ -40,15 +53,6 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
      
     }
 
-    .mainBarLeft{
-
-        margin-left: 150px;
-    }
-
-    .mainBarRight{
-
-        margin-right: 150px;
-    }
 
     .brand-xs{
         display:none;
@@ -141,8 +145,8 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
 
 .mainNav_Wrapper {
     margin-top: 15px;
-    margin-left: 135px;
-    margin-right: 135px;
+    margin-left: auto;
+    margin-right: auto;
    
     display: flex;
     overflow-x: auto;
@@ -179,6 +183,9 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
         
         //overflow-y:hidden;
      
+
+
+    
         
         .mainNav-Advancer{
             display: flex;
@@ -192,3 +199,85 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
         }
     }
 }
+
+
+//a partir de aca y hacia abajo todo es modo de prueba, borrar luego de implementar.
+
+    
+/*Downloaded from https://www.codeseek.co/mahish/arrow-buttons-for-responsive-horizontal-scroll-menu-RajmQw */
+body {
+    margin: 3em;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-wrapper {
+    position: relative;
+    
+    max-width: 800px;
+    height: 40px;
+    margin: 1em auto;
+    //border: 1px solid black;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .menu {
+    height: 40px;
+  
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu .item {
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+   // outline: 1px dotted gray;
+    padding: 0.5em;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  .paddle {
+    padding:0 1em;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2em;
+  }
+  
+  .left-paddle {
+    margin-right: 2em;
+    padding: 0 1em;
+    left: 0;
+    border: none;
+    background-color: none;
+  }
+  
+  .right-paddle {
+    right: 0;
+    border:none;
+
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .print {
+    margin: auto;
+    max-width: 500px;
+  }
+  .print span {
+    display: inline-block;
+    width: 100px;
+  }
