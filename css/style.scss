@@ -192,3 +192,10 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
         }
     }
 }
+
+.container_news{
+    display: flex;
+    flex-wrap: wrap;
+    background: pink;
+    border-style: dashed;
+}
