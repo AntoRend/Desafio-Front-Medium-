@@ -509,6 +509,11 @@ body {
   overflow: hidden;
 }
 
+#img-card {
+  width: 150px;
+  height: 170 px;
+}
+
 .popover .popover-body ul {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
