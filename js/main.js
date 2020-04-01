@@ -159,44 +159,58 @@ const showModalContent =()=>{
      </div>
 </div>
     `)
-    $("#doot-menu").on("click",dootsMenu)
+   // $("#doot-menu").on("click",dootsMenu)
 }
 
 $("#article-button").on("click", showModalContent)
 
-const dootsMenu =()=>{
- // let menudoot = document.createElement("div")
-  alert("aloha")
-  $("container").append(`
-  <div class="popover"  role="tooltip">
-  <div class="arrow"></div>
-  <div class="popover-body">
-      <ul>
-          <li>
-              <span>
-                  <button>Mute this author</button>
-              </span>
-          </li>
-          <li>
-              <span>
-                  <button>Mute this publication</button>
-              </span>
-          </li>
-          <li>
-              <span>
-                  <button>Mute this story</button>
-              </span>
-          </li>
-          <li>
-              <span>
-                  <button>Block this author</button>
-              </span>
-          </li>
-      </ul>
-  </div>
-</div> 
-  `)
+
+const printArticle = () =>{
+    var article = postArray[0]
+    console.log(article)
 }
+printArticle()
+    /*
+    $("#seccion").append(`
+    <article class="d-flex mt-25">
+    <div class="col-9">
+        <div class="row">
+            <div class="col-12">
+                <span class="ranking">Category of post</span>
+                <h2>${article.titlePost}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>Description of post.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+               <p>Location post</p>
+               <span class="ranking">kjfajñfiaejrenljfbdjnfdñjnñ</span>
+            </div>
+            <div class="col-2 buttons_marker">
+                <svg class="svgIcon-use" width="25" height="25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg>
+                <svg class="svgIcon-use" width="25" height="25"><path d="M5 12.5c0 .552.195 1.023.586 1.414.39.39.862.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414A1.927 1.927 0 0 0 7 10.5c-.552 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.617 0c0 .552.196 1.023.586 1.414.391.39.863.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414a1.927 1.927 0 0 0-1.414-.586c-.551 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.6 0c0 .552.195 1.023.586 1.414.39.39.868.586 1.432.586.551 0 1.023-.195 1.413-.586.391-.39.587-.862.587-1.414 0-.552-.196-1.023-.587-1.414a1.927 1.927 0 0 0-1.413-.586c-.565 0-1.042.195-1.432.586-.39.39-.586.862-.587 1.414z" fill-rule="evenodd"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <img alt="imagen aleatoria" id="img-card" src=${article.imgPost}>
+    </div>
+</article>
+    `)*/
+
+
+
+
+/*
+$(document).ready(function(){
+    getDataBase(),
+    principalArticle()
+})
+*/
 
 
 
@@ -274,6 +288,40 @@ $(leftPaddle).on('click', function() {
 
 //Agregar articles
 /*
+
+const dootsMenu =()=>{
+ // let menudoot = document.createElement("div")
+  alert("aloha")
+  $("container").append(`
+  <div class="popover"  role="tooltip">
+  <div class="arrow"></div>
+  <div class="popover-body">
+      <ul>
+          <li>
+              <span>
+                  <button>Mute this author</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Mute this publication</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Mute this story</button>
+              </span>
+          </li>
+          <li>
+              <span>
+                  <button>Block this author</button>
+              </span>
+          </li>
+      </ul>
+  </div>
+</div> 
+  `)
+}
 const principalArticle =()=>{
     let article = postArray[0]
     console.log(article)
@@ -301,8 +349,6 @@ const principalArticle =()=>{
     `)
 }
 principalArticle()
-
-
 const sectionTwoArticle =()=>{
     let article = postArray[0]
     for(let i=0; i<2; i++){
@@ -330,7 +376,6 @@ const sectionTwoArticle =()=>{
         `)
     }
 }
-
 const sectionThreeArticle=()=>{
     let article = postArray[0]
     $("#thirdArticle").append(`
@@ -357,5 +402,4 @@ const sectionThreeArticle=()=>{
     `)
 }
 sectionThreeArticle()
-
 */
