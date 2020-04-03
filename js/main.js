@@ -199,3 +199,46 @@ const dootsMenu =()=>{
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+
+  
+
+// duration of scroll animation
+var scrollDuration = 300;
+// paddles
+var leftPaddle = document.getElementsByClassName('left-paddle');
+var rightPaddle = document.getElementsByClassName('right-paddle');
+// get items dimensions
+var itemsLength = $('.item').length;
+var itemSize = $('.item').outerWidth(true);
+// get some relevant size for the paddle triggering point
+var paddleMargin = 20;
+
+// get wrapper width
+var getMenuWrapperSize = function() {
+	return $('.menu-wrapper').outerWidth();
+}
+var menuWrapperSize = getMenuWrapperSize();
+// the wrapper is responsive
+$(window).on('resize', function() {
+	menuWrapperSize = getMenuWrapperSize();
+});
+// size of the visible part of the menu is equal as the wrapper size 
+var menuVisibleSize = menuWrapperSize;
+
+// get total width of all menu items
+var getMenuSize = function() {
+	return itemsLength * itemSize;
+};
+var menuSize = getMenuSize();
+// get how much of menu is invisible
+var menuInvisibleSize = menuSize - menuWrapperSize;
+
+// scroll to left
+$(rightPaddle).on('click', function() {
+	$('.menu').animate( { scrollLeft: menuInvisibleSize}, scrollDuration);
+});
+
+// scroll to right
+$(leftPaddle).on('click', function() {
+	$('.menu').animate( { scrollLeft: '0' }, scrollDuration);
+});

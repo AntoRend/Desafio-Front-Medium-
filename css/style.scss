@@ -7,7 +7,9 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
 */
 *{
     box-sizing: border-box;
+    font-size: 15px;
 }
+
 
                         /*modal CSS */
 #content-text {
@@ -58,4 +60,94 @@ font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode
          } 
      }
  }
-                         /*END modal CSS */
+                         /* modal CSS */
+header{
+    max-width: 95%;
+    margin: 5px auto;
+    .top-container{
+        .container-icons{
+            .svgIcon{
+                fill: rgba(0,0,0,.54);
+            }
+        }
+        .svgIcon:hover{
+            cursor: pointer;
+            fill: rgba(0,0,0,.84) ;
+        }
+    }
+ } 
+
+ button{
+     height: min-content;
+ }
+
+ /*scroll nav-bar*/
+ .nav-bar{
+     .arrow{
+        button{
+            background-color: transparent;
+            border: none;
+        }
+     }
+    .menu-wrapper {
+        height: 35px;
+        position: relative;
+        overflow-y: hidden;
+        .menu {
+            list-style: none;
+            white-space: nowrap;
+            overflow-x: auto;
+            padding-inline-start: 10px;
+            -webkit-overflow-scrolling: touch;
+            li{
+            display: inline-block;
+            float: none;
+            padding: 7px;
+            a:hover{color: rgba(0,0,0,.84) ;}
+            a{
+                text-decoration: none;
+                color: rgba(0,0,0,.54);
+                display: inline-block;
+                }
+            }
+          }
+          .paddle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3em;
+          } 
+      }
+ }
+  /*scroll nav-bar*/
+
+.news-container{
+    .news{
+        border: none;
+        padding: 5px;
+        .principal-img{
+            height: 150px;
+            overflow: hidden;
+            vertical-align: middle;
+            display:flex;
+            align-items: center;
+        }
+        .second-img{
+            height: 100px;
+            overflow: hidden;
+            vertical-align: middle;
+            display:flex;
+            align-items: center;
+    }
+}   
+    .lateral-articles{
+    height: 100%;
+    } 
+    .content-cards{
+    height: 100%;
+    }
+}
+
+.editor-picks{
+    border-bottom: 0.5px solid rgba(0,0,0,.54);
+}
