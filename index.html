@@ -46,7 +46,7 @@
           </div>
                                     <!--Scroll Nav-->
           <div class="row">
-              <nav class="nav-bar col-10 mx-auto scroll-nav d-flex">
+              <nav class="nav-bar col-9 mx-auto scroll-nav d-flex justify-content-center">
                 <div class="arrow d-flex align-items-center"><button class="left-paddle paddle hidden col-1">
                         <
                     </button>
@@ -82,12 +82,11 @@
             <section class="news col-5">
                 <article class="lateral-articles">
                     <div class="card content-cards">
-                        <div class="img principal-img">
-                            <figure><img class="img-fluid" src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt=""></figure>
+                        <div id="img-newOne" class="img principal-img">
+                            
                         </div>
-                        <div class="info ml-5">
-                        <h1 class="title-new-card">Titulo</h1>
-                        <h3 class="subtitle-new-card">Subtitulo</h3>
+                        <div id="info-newOne" class="info ml-5">
+                        
                         <div class="author d-flex justify-content-between">
                             <div>
                                 <span class="d-flex">
@@ -102,65 +101,18 @@
                     </div>
                 </article>
             </section>
-            <div class="news col-4 content-cards">
-                <article>
-                    <div class="card mb-1">
-                        <div class="row no-gutters">
-                          <div class="col-md-4 second-img">
-                            <figure><img class="img-fluid" src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" class="card-img" alt="..."></figure>
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body py-0">
-                              <h5 class="title-new-card">Card title</h5>
-                              <a href="">Author</a>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </article>
-                <article>
-                    <div class="card mb-1">
-                        <div class="row no-gutters">
-                          <div class="col-md-4 second-img">
-                            <img src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body py-0">
-                              <h5 class="title-new-card">Card title</h5>
-                              <a href="">Author</a>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </article>
-                <article>
-                    <div class="card mb-1">
-                        <div class="row no-gutters">
-                          <div class="col-md-4 second-img">
-                            <img src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body py-0 d-flex flex-column justify-content-between">
-                              <h5 class="title-new-card">Card title</h5>
-                              <div>
-                              <a href="">Author</a>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </article>
+            <div id="news-two" class="news col-4 content-cards">
+               
             </div>
             <section class="news col-3">
                 <article class="lateral-articles">
                     <dic class="card content-cards">
-                        <div class="img principal-img">
-                            <figure><img class="img-fluid" src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt=""></figure>
+                        <div id="img-newThree" class="img principal-img">
+                            
                         </div>
-                        <h2 class="title-new-card">Titulo</h2>
-                        <h3 class="subtitle-new-card">Subtitulo</h3>
+                        <div id="info-newThree">
+                          
+                        </div>
                         <div class="author d-flex justify-content-between">
                             <div>
                                 <span class="d-flex">
@@ -181,19 +133,8 @@
     <div class="row">
         <div class="lastest-section col-10 mx-auto d-flex">
             <div class="new-inputs col-8">
-                <div class="card mb-3">
-                    <div class="no-gutters d-flex align-items-center justify-content-end">
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                      <div class="img-card img-fluid col-md-4">
-                        <img src="https://images.unsplash.com/photo-1542487019-ca5f6c44762b?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" class="card-img" alt="...">
-                      </div>
-                    </div>
+                <div id="card-list" class="card mb-3">
+                    
                   </div>
             </div>
             <div class="popular col-4">
@@ -202,6 +143,66 @@
                     <ol class="popular-list">
                         <li class="d-flex">
                           <div class="numb d-flex align-items-start">01</div>
+                          <div class="pop-title">
+                            <a href=""><h4 class="title m-0">Title</h4></a>
+                            <div><span class="info-card d-flex">
+                                  <a href="">Author</a>
+                                  <p class="my-0 mx-1">in</p>
+                                  <a href="">Source</a>
+                              </span>
+                            </div>
+                            <div class="date">
+                              <p class="m-0">Fecha</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="numb d-flex align-items-start">02</div>
+                          <div class="pop-title">
+                            <a href=""><h4 class="title m-0">Title</h4></a>
+                            <div><span class="info-card d-flex">
+                                  <a href="">Author</a>
+                                  <p class="my-0 mx-1">in</p>
+                                  <a href="">Source</a>
+                              </span>
+                            </div>
+                            <div class="date">
+                              <p class="m-0">Fecha</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="numb d-flex align-items-start">03</div>
+                          <div class="pop-title">
+                            <a href=""><h4 class="title m-0">Title</h4></a>
+                            <div><span class="info-card d-flex">
+                                  <a href="">Author</a>
+                                  <p class="my-0 mx-1">in</p>
+                                  <a href="">Source</a>
+                              </span>
+                            </div>
+                            <div class="date">
+                              <p class="m-0">Fecha</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="numb d-flex align-items-start">04</div>
+                          <div class="pop-title">
+                            <a href=""><h4 class="title m-0">Title</h4></a>
+                            <div><span class="info-card d-flex">
+                                  <a href="">Author</a>
+                                  <p class="my-0 mx-1">in</p>
+                                  <a href="">Source</a>
+                              </span>
+                            </div>
+                            <div class="date">
+                              <p class="m-0">Fecha</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="numb d-flex align-items-start">05</div>
                           <div class="pop-title">
                             <a href=""><h4 class="title m-0">Title</h4></a>
                             <div><span class="info-card d-flex">
@@ -235,14 +236,6 @@
             </div>
         </div>
     </div>
-        
-       
-
-        <!--modal muestra contenido-->
-
-        <button type="button" id="article-button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Show Article</button>
-        <!--fin modal muestra-->
-
        
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

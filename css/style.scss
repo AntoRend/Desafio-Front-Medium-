@@ -180,6 +180,11 @@ header{
             border: none;
             .card-body{
                 height: 100%;
+                .card-text{
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    max-height: 40px;
+                }
             }
             .img-card{
                 max-width: 140px;

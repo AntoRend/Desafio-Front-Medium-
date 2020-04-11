@@ -203,6 +203,12 @@ button {
   height: 100%;
 }
 
+.lastest-section .new-inputs .card .card-body .card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 40px;
+}
+
 .lastest-section .new-inputs .card .img-card {
   max-width: 140px;
   height: 100%;

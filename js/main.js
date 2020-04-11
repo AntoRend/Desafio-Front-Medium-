@@ -54,6 +54,7 @@ const newPostModal =() =>{
         <!--End modal-->
         ` )
         $("#add-entry").on("click", saveNewPost)
+        $("#add-entry").on("click", printNewPost)
 }
 
 $("#new-post-button").on("click", newPostModal)
@@ -68,10 +69,33 @@ const saveNewPost=()=>{
         contentPost = $("#content-text").val(),
         referencesPost = $("#references-text").val(),
         tagsPost = $("#tags-text").val(),
+        date = new Date()
+        postDate = (date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear()),
+        clicks = 0,
 
-        postObject = {titlePost,subtitlePost,imgPost,contentPost,referencesPost,tagsPost};
+        postObject = {titlePost,subtitlePost,imgPost,contentPost,referencesPost,tagsPost, postDate, clicks};
         console.log(postObject)
         pushDataBase(postObject)
+}
+
+const printNewPost=()=>{
+    let titlePost = $("#title-input").val(),
+    imgPost = $("#img-input").val(),
+    contentPost = $("#content-text").val();
+    $("#card-list").prepend(`
+    <div class="no-gutters d-flex align-items-center justify-content-around">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${titlePost}</h5>
+        <p class="card-text">${contentPost}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="img-card img-fluid col-md-4">
+      <img src="${imgPost}" class="card-img" alt="...">
+    </div>
+  </div>
+    `)
 }
 
 //Función que ingresa los datos
@@ -84,22 +108,102 @@ const pushDataBase = (postObject)=>{
 
 //Funcion que trae los datos de la base de datos
 var postArray;
-const getDataBase = ()=>{
+async function getDataBase(){
     postArray = [];
-    $.get("https://javascript-ajax-d0ce6.firebaseio.com/toño/koders/.json", function(data){
+   await $.get("https://javascript-ajax-d0ce6.firebaseio.com/toño/koders/.json", function(data){
         $.each(data,(key,value)=>{
             postArray.push({...value,key})
     })
   //  console.log(postArray)
    // koderList(kodersArray)
     }) 
-    
 }
-getDataBase()
 
-const showModalContent =()=>{
-    let article = postArray[0]
+const printArticleList =()=>{
+    postArray.forEach((item, index)=>{
+        $("#card-list").append(`
+        <div class="no-gutters d-flex align-items-center justify-content-around">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 type="button" class="card-title modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${index}>${item.titlePost}</h5>
+            <p type="button" class="card-text modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${index}>${item.contentPost}</p>
+            <p class="card-text"><small class="text-muted">Updated ${item.postDate}</small></p>
+          </div>
+        </div>
+        <div class="img-card img-fluid col-md-4">
+          <img src="${item.imgPost}" type="button" class="card-img modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${index} alt="...">
+        </div>
+      </div>
+        `)
+    })
+}
+
+const randomNewsSection =(positionArray)=>{
+    positionArray.forEach((item,index)=>{
+        if (index == 0){
+          console.log(item)
+          $("#img-newOne").append(`
+          <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" alt=""></figure>`)
+          $("#info-newOne").prepend(`
+              <h1 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h1>
+              <h3 type="button" class="subtitle-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].subtitlePost}</h3>`)
+        } else if(index>0 && index<4){
+            $("#news-two").append(`
+            <article>
+            <div class="card mb-1">
+                <div class="row no-gutters">
+                  <div class="col-md-4 second-img">
+                    <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" class="card-img" alt="..."></figure>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body py-0">
+                      <h5 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h5>
+                      <a href="">Author</a>
+                      <p class="card-text"><small class="text-muted modal-link" data-toggle="modal" data-target=".bd-example-modal-xl">Updated ${postArray[item].postDate}</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </article>
+            `)
+          console.log(item)
+        } else if(index==4){
+            $("#img-newThree").append(`
+            <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" alt=""></figure>`)
+            $("#info-newThree").prepend(`
+            <h2 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h1>
+            <h3 type="button" class="subtitle-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].subtitlePost}</h3>`)
+          console.log(item)
+        }
+      })
+      $(".modal-link").on("click", counter)
+      $(".modal-link").on("click", numberOfPost)
+}
+
+const randomNumber =()=>{
+    let positionArray = []
+    let numberOfPost =postArray.map((item,index)=>{ return index})
+    console.log(numberOfPost)
+    positionArray = numberOfPost.sort(function() {return Math.random() - 0.5});
+    console.log(positionArray)
+    randomNewsSection(positionArray)
+}
+
+var promiseGet = getDataBase()
+var promiseRand = promiseGet.then(printArticleList)
+promiseRand.then(randomNumber)
+
+const numberOfPost =()=>{
+    $("#modal-container-article").html("")
+    let article;
+    let indexPost = $(event.target).data("post-item")
+    article = postArray[indexPost]
     console.log(article)
+    console.log(indexPost)
+    showModalContent(article)
+}
+
+const showModalContent =(article)=>{
     $("#modal-container-article").append(`
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -162,68 +266,22 @@ const showModalContent =()=>{
    // $("#doot-menu").on("click",dootsMenu)
 }
 
-$("#article-button").on("click", showModalContent)
-
-
-const printArticle = () =>{
-    var article = postArray[0]
-    console.log(article)
-}
-printArticle()
-    /*
-    $("#seccion").append(`
-    <article class="d-flex mt-25">
-    <div class="col-9">
-        <div class="row">
-            <div class="col-12">
-                <span class="ranking">Category of post</span>
-                <h2>${article.titlePost}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <p>Description of post.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-10">
-               <p>Location post</p>
-               <span class="ranking">kjfajñfiaejrenljfbdjnfdñjnñ</span>
-            </div>
-            <div class="col-2 buttons_marker">
-                <svg class="svgIcon-use" width="25" height="25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg>
-                <svg class="svgIcon-use" width="25" height="25"><path d="M5 12.5c0 .552.195 1.023.586 1.414.39.39.862.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414A1.927 1.927 0 0 0 7 10.5c-.552 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.617 0c0 .552.196 1.023.586 1.414.391.39.863.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414a1.927 1.927 0 0 0-1.414-.586c-.551 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.6 0c0 .552.195 1.023.586 1.414.39.39.868.586 1.432.586.551 0 1.023-.195 1.413-.586.391-.39.587-.862.587-1.414 0-.552-.196-1.023-.587-1.414a1.927 1.927 0 0 0-1.413-.586c-.565 0-1.042.195-1.432.586-.39.39-.586.862-.587 1.414z" fill-rule="evenodd"></path></svg>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <img alt="imagen aleatoria" id="img-card" src=${article.imgPost}>
-    </div>
-</article>
-    `)*/
-
-
-
-
-/*
-$(document).ready(function(){
-    getDataBase(),
-    principalArticle()
-})
-*/
-
-
-
 const counter =()=>{
-    let counter = 0;
-
-
+    //clicks
+    let indexPost = $(event.target).data("post-item")
+  //  console.log(indexPost)
+    postArray[indexPost].clicks += 1
 }
 
+const clicks = postArray.reduce((accum, item)=>{
+    accum.push(item.clicks)
+    return accum
+  },[])
+  
+  console.log(clicks)
+  
 
-//Agregar articles
 /*
-
 const dootsMenu =()=>{
  // let menudoot = document.createElement("div")
   alert("aloha")
