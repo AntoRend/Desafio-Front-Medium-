@@ -1,0 +1,28 @@
+{
+  "name": "desafio-front-medium",
+  "version": "1.0.0",
+  "description": "Clone Medium Dev",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntoRend/Desafio-Front-Medium.git"
+  },
+  "author": "AntoRend",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntoRend/Desafio-Front-Medium/issues"
+  },
+  "homepage": "https://github.com/AntoRend/Desafio-Front-Medium#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
