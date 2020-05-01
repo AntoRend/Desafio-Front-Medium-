@@ -180,6 +180,32 @@ const randomNewsSection =(positionArray)=>{
       $(".modal-link").on("click", numberOfPost)
 }
 
+const printPopularList =() =>{
+    postArray.sort(function(a, b){
+        return b.clicks - a.clicks;
+      })
+      console.log(postArray)
+      for (let i=0; i<5; i++){
+          $("#popularlist").append(`
+          <li class="d-flex">
+          <div class="numb d-flex align-items-start">0${i+1}</div>
+          <div class="pop-title">
+            <a href=""><h4 class="title m-0">${postArray[i].titlePost}</h4></a>
+            <div><span class="info-card d-flex">
+                  <a href="">Author</a>
+                  <p class="my-0 mx-1">in</p>
+                  <a href="">Source</a>
+              </span>
+            </div>
+            <div class="date">
+              <p class="m-0">${postArray[i].postDate}</p>
+            </div>
+          </div>
+        </li>
+          `)
+      }
+  }
+
 const randomNumber =()=>{
     let positionArray = []
     let numberOfPost =postArray.map((item,index)=>{ return index})
@@ -271,14 +297,23 @@ const counter =()=>{
     let indexPost = $(event.target).data("post-item")
   //  console.log(indexPost)
     postArray[indexPost].clicks += 1
+    let postKey = postArray[indexPost].key
+    $.ajax({
+        url: `https://javascript-ajax-d0ce6.firebaseio.com/toño/koders/${postKey}.json`,
+        type: 'PATCH',
+        data: JSON.stringify(postArray[indexPost]),
+        success:(response)=>{
+            console.log(response)
+        }
+     });
 }
 
 const clicks = postArray.reduce((accum, item)=>{
     accum.push(item.clicks)
     return accum
   },[])
-  
-  console.log(clicks)
+  //console.log(clicks)
+
   
 
 /*
