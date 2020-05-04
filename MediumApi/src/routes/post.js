@@ -1,8 +1,10 @@
 const express = require('express')
 
 const posts = require('../usecases/post')
+const auth = require('../middlewares/auth')
 
 const router = express.Router()
+//router.use(auth)
 
 // GET /post
 router.get('/', async (req, res) => {
