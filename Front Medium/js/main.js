@@ -213,6 +213,7 @@ const randomNumber =()=>{
     positionArray = numberOfPost.sort(function() {return Math.random() - 0.5});
     console.log(positionArray)
     randomNewsSection(positionArray)
+    printPopularList()
 }
 
 var promiseGet = getDataBase()

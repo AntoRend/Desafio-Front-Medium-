@@ -42,7 +42,7 @@ const postSchema = new mongoose.Schema({
     clicks: {
         type: Number,
         required: true,
-        default : 0
+        //default : 0
     }
 
 })
