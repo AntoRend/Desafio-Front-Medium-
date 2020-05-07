@@ -1,3 +1,40 @@
+const userData = () => {
+  let email = $("#user-email").val()
+  let password = $("#user-pass").val()
+  return {email, password}
+}
+
+function register() {
+ let registerData = userData()
+  $.ajax({
+    url: "http://localhost:8082/users/signup",
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(registerData),
+    success: (response) => {
+      console.log(response)
+    }
+  })
+  //console.log(JSON.stringify(userData()))
+}
+$("#register").on("click", register)
+
+
+function login () {
+  let loginData = userData()
+  $.ajax({
+    url: "http://localhost:8082/auth/login",
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(loginData),
+    success: (response) => {
+      console.log(response)
+    }
+  })
+    //console.log(JSON.stringify(userData()))
+}
+$("#login").on("click", login)
+
 const newPostModal =() =>{
     $("#modal-container-input").append(  `
         <!--modal-->
@@ -101,7 +138,7 @@ const printNewPost=()=>{
 //Función que ingresa los datos
 const pushDataBase = (postObject)=>{
     let postContent = JSON.stringify(postObject)
-    $.post("https://javascript-ajax-d0ce6.firebaseio.com/toño/koders/.json",postContent, function(status){
+    $.post("http://localhost:8082/posts",postContent, function(status){
         console.log(status)
         }) 
 }
@@ -110,11 +147,11 @@ const pushDataBase = (postObject)=>{
 var postArray;
 async function getDataBase(){
     postArray = [];
-   await $.get("https://javascript-ajax-d0ce6.firebaseio.com/toño/koders/.json", function(data){
-        $.each(data,(key,value)=>{
+   await $.get("http://localhost:8082/posts", function(data){
+        $.each(data.data.Posts,(key,value)=>{
             postArray.push({...value,key})
     })
-  //  console.log(postArray)
+    console.log(postArray)
    // koderList(kodersArray)
     }) 
 }
@@ -141,39 +178,39 @@ const printArticleList =()=>{
 const randomNewsSection =(positionArray)=>{
     positionArray.forEach((item,index)=>{
         if (index == 0){
-          console.log(item)
+          //console.log(item)
           $("#img-newOne").append(`
-          <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" alt=""></figure>`)
+          <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].image}" alt=""></figure>`)
           $("#info-newOne").prepend(`
-              <h1 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h1>
-              <h3 type="button" class="subtitle-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].subtitlePost}</h3>`)
+              <h1 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].title}</h1>
+              <h3 type="button" class="subtitle-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].subtitle}</h3>`)
         } else if(index>0 && index<4){
             $("#news-two").append(`
             <article>
             <div class="card mb-1">
                 <div class="row no-gutters">
                   <div class="col-md-4 second-img">
-                    <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" class="card-img" alt="..."></figure>
+                    <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].image}" class="card-img" alt="..."></figure>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body py-0">
-                      <h5 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h5>
+                      <h5 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].title}</h5>
                       <a href="">Author</a>
-                      <p class="card-text"><small class="text-muted modal-link" data-toggle="modal" data-target=".bd-example-modal-xl">Updated ${postArray[item].postDate}</small></p>
+                      <p class="card-text"><small class="text-muted modal-link" data-toggle="modal" data-target=".bd-example-modal-xl">Updated ${postArray[item].date}</small></p>
                     </div>
                   </div>
                 </div>
               </div>
         </article>
             `)
-          console.log(item)
+          //console.log(item)
         } else if(index==4){
             $("#img-newThree").append(`
             <figure><img type="button" class="img-fluid modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item} src="${postArray[item].imgPost}" alt=""></figure>`)
             $("#info-newThree").prepend(`
             <h2 type="button" class="title-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].titlePost}</h1>
             <h3 type="button" class="subtitle-new-card modal-link" data-toggle="modal" data-target=".bd-example-modal-xl" data-post-item=${item}>${postArray[item].subtitlePost}</h3>`)
-          console.log(item)
+          //console.log(item)
         }
       })
       $(".modal-link").on("click", counter)
@@ -209,9 +246,9 @@ const printPopularList =() =>{
 const randomNumber =()=>{
     let positionArray = []
     let numberOfPost =postArray.map((item,index)=>{ return index})
-    console.log(numberOfPost)
+    //console.log(numberOfPost)
     positionArray = numberOfPost.sort(function() {return Math.random() - 0.5});
-    console.log(positionArray)
+    //console.log(positionArray)
     randomNewsSection(positionArray)
 }
 

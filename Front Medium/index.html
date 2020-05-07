@@ -42,6 +42,7 @@
                 <button type="button" class="btn btn-light border border-dark mx-1 d-none d-md-block">Upgrade</button>
                 <button type="button" class="btn btn-outline-success mx-1 d-none d-lg-block" data-toggle="modal" data-target=".bd-example-modal-lg" id="new-post-button">New Post</button>
                 <button type="button" class="btn btn-outline-success mx-1 d-block d-lg-none" data-toggle="modal" data-target=".bd-example-modal-lg" id="new-post-button">N</button>
+                <button type="button" class="rounded-circle bg-transparent" data-toggle="modal" data-target="#exampleModal"><img src="./assets/images/human-man-people-person-profile_113435.png" alt=""></button>
             </div>
           </div>
                                     <!--Scroll Nav-->
@@ -161,6 +162,46 @@
                 </aside>
             </div>
         </div>
+</div>
+
+<div class="register-modal-container" id="register-modal">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="title-modal-user">Welcome To Medium</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email:</label>
+              <input type="text" class="form-control" id="user-email">
+            </div>
+            <div class="form-group">
+              <label for="recipient-pass" class="col-form-label">Password:</label>
+              <input type="text" class="form-control" id="user-pass">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <div ><button type="button" class="btn bg-transparetn" id="register">Register</button></div>
+          <div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="login">Login</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
     </div>
        
     <script

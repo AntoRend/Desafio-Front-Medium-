@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+let date = new Date()
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -37,7 +37,7 @@ const postSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
-        default: new Date()
+        default : (date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear()),
     },
     clicks: {
         type: Number,
